@@ -1,26 +1,36 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
+/* ── Font references (CSS vars injected by next/font in layout.tsx) ── */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-display: var(--font-syne);
+  --font-sans: var(--font-dm-sans);
+  --font-mono: var(--font-dm-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ── Design-system colour tokens ── */
+@theme {
+  --color-coral: #ff6b6b;
+  --color-brand-teal: #4ecdc4;
+  --color-brand-amber: #ffd166;
+  --color-brand-purple: #7b5ea7;
+  --color-brand-lime: #95e06c;
+  --color-bg-deep: #1a1a2e;
+  --color-surface: #16213e;
+  --color-ghost-border: #3a3a5c;
+  --color-text-primary: #f5f0eb;
+  --color-text-muted: #b8b0a8;
 }
 
+/* ── Base ── */
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #1a1a2e;
+  color: #f5f0eb;
+}
+
+/* ── React Flow: match app dark theme ── */
+.react-flow__background {
+  background-color: #16213e !important;
+}
+.react-flow__attribution {
+  display: none;
 }

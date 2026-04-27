@@ -9,9 +9,18 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@ai-sdk/anthropic": "^3.0.71",
+    "@anthropic-ai/sdk": "^0.91.1",
+    "@dagrejs/dagre": "^3.0.0",
+    "@xyflow/react": "^12.10.2",
+    "ai": "^6.0.168",
+    "framer-motion": "^12.38.0",
+    "html-to-image": "^1.11.13",
+    "nanoid": "^5.1.9",
     "next": "16.2.4",
     "react": "19.2.4",
-    "react-dom": "19.2.4"
+    "react-dom": "19.2.4",
+    "zod": "^4.3.6"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
@@ -21,6 +30,6 @@
     "eslint": "^9",
     "eslint-config-next": "16.2.4",
     "tailwindcss": "^4",
-    "typescript": "^5"
+    "typescript": "^5.9.3"
   }
 }
