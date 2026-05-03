@@ -27,6 +27,12 @@ body {
   color: #f5f0eb;
 }
 
+/* Keep Next devtools portal from forcing top/left offsets in dev preview. */
+nextjs-portal {
+  top: unset !important;
+  left: unset !important;
+}
+
 /* ── React Flow: match app dark theme ── */
 .react-flow__background {
   background-color: #16213e !important;
