@@ -47,10 +47,15 @@ export function BusinessTypeSelector({ onSelect }: Props) {
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.97 }}
             onClick={() => onSelect(t.id)}
-            className="flex flex-col items-start gap-2 rounded-2xl border border-ghost-border bg-surface p-4 text-left
+            className="relative flex flex-col items-start gap-2 rounded-2xl border border-ghost-border bg-surface p-4 text-left
                        transition-colors hover:border-brand-teal hover:bg-brand-teal/5 focus:outline-none
                        focus-visible:ring-2 focus-visible:ring-brand-teal"
           >
+            {t.id === "saas" && (
+              <span className="absolute top-2 right-2 rounded-full bg-brand-purple/20 px-2 py-0.5 text-[10px] font-semibold text-brand-purple leading-none">
+                most popular
+              </span>
+            )}
             <span className="text-2xl">{t.icon}</span>
             <span className="font-display font-semibold text-text-primary text-sm">
               {t.label}
