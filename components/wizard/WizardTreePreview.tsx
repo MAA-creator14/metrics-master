@@ -20,8 +20,9 @@ const GHOST_PROMPTS: Partial<Record<WizardStepId, string>> = {
 function NorthStarNode({ name, unit }: { name: string; unit: string }) {
   return (
     <motion.div
-      initial={{ scale: 0.8, opacity: 0 }}
-      animate={{ scale: 1, opacity: 1 }}
+      initial={{ opacity: 0, y: 8 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.3, ease: "easeOut" }}
       className="rounded-2xl border-2 border-coral bg-coral/10 px-4 py-3 inline-block max-w-[240px]"
     >
       <div className="flex items-center gap-2 mb-1">
@@ -38,9 +39,9 @@ function IndicatorNode({ name, unit, level }: { name: string; unit: string; leve
   const color = level === 2 ? "brand-teal" : "brand-amber";
   return (
     <motion.div
-      initial={{ scale: 0.8, opacity: 0 }}
-      animate={{ scale: 1, opacity: 1 }}
-      transition={{ type: "spring", stiffness: 300, damping: 20 }}
+      initial={{ opacity: 0, y: 8 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.3, ease: "easeOut" }}
       className={`rounded-xl border border-${color}/40 bg-${color}/10 px-3 py-2.5 inline-block max-w-[200px]`}
     >
       <p className={`font-display font-semibold text-${color} text-xs leading-snug`}>{name}</p>
