@@ -51,3 +51,18 @@ All defined in `app/globals.css` `@theme` block. Reference them as Tailwind util
 ## Environment
 Copy `.env.local.example` → `.env.local` and add your `ANTHROPIC_API_KEY`.
 The app runs without it — only the optional AI button requires it.
+
+## Next.js 16 — `params` / `searchParams` (async dynamic APIs)
+
+### Dev console noise (`sync-dynamic-apis`)
+If you see terminal/browser logs like *params are being enumerated* or *The keys of `searchParams` were accessed directly* with a stack through `serializeValue` → `getReactComponentInfo` → `HTMLDocument.mousemoveListener` / `clickListener`, that is usually the **Next.js dev overlay / inspector** trying to serialize React component props (including internal framework props that are Promise-like). It is **not** evidence that `app/` code is wrong — this repo has **no** dynamic segment routes and **no** `params` / `searchParams` props in pages.
+
+**Mitigations:** avoid hovering picks that trigger the component inspector; upgrade Next on a schedule; clear `.next` if caches look stale (`rm -rf .next && npm run dev`).
+
+### When you add dynamic routes (do this in code)
+Next.js 16 treats `params` and `searchParams` as **Promises** for pages/layouts. Never spread them, never `Object.keys` them, and never read fields until unwrapped.
+
+- **Server Component `page.tsx` / `layout.tsx`:** make the export `async` and `await params` / `await searchParams` before use.
+- **Client Component:** unwrap with `React.use(params)` / `React.use(searchParams)` from React 19 before reading properties.
+
+Official docs: https://nextjs.org/docs/messages/sync-dynamic-apis

@@ -13,7 +13,10 @@ export default function TreePage() {
   const [showCelebration, setShowCelebration] = useState(true);
 
   useEffect(() => {
-    setTree(readTreeFromHash());
+    // Defer state update so the effect body does not call setState synchronously (react-hooks/set-state-in-effect).
+    queueMicrotask(() => {
+      setTree(readTreeFromHash());
+    });
     const t = setTimeout(() => setShowCelebration(false), 3000);
     return () => clearTimeout(t);
   }, []);

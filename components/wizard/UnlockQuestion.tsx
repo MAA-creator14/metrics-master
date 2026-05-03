@@ -3,8 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { nanoid } from "nanoid";
-import type { BusinessType, WizardStepId } from "@/types";
+import type { BusinessType } from "@/types";
 import { getQuestion, interpolateQuestion, EXAMPLE_ANSWERS } from "@/content/wizardQuestions";
 import { looksLikeLaggingMetric } from "@/content/laggingKeywords";
 import { callNameMetric } from "@/lib/claudeClient";
