@@ -89,6 +89,12 @@ export function UnlockQuestion({
       <p className="text-text-muted text-sm font-mono mb-2 uppercase tracking-widest">
         Step {stepNum} of 6 · Indicator {stepNum - 2} of 4
       </p>
+      <div className="w-full h-[3px] bg-surface rounded-full mb-5 overflow-hidden">
+        <div
+          className="h-full bg-brand-purple rounded-full transition-all duration-500 ease-out"
+          style={{ width: `${(stepNum / 6) * 100}%` }}
+        />
+      </div>
 
       {/* Question */}
       <div className="rounded-2xl bg-surface border border-ghost-border p-5 mb-6">
