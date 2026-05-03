@@ -22,8 +22,7 @@ export default function Home() {
         What drives your north star?
       </h1>
       <p className="text-text-muted text-lg mb-10 max-w-md">
-        Answer 4 questions. Unlock your metric tree. Understand what to move
-        before the number moves.
+        Answer 6 questions. Get your personalised metric tree in ~7 minutes.
       </p>
 
       <Link
