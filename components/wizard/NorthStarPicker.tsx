@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { nanoid } from "nanoid";
@@ -78,9 +79,14 @@ export function NorthStarPicker({
       exit={{ opacity: 0, y: -16 }}
       transition={{ duration: 0.25 }}
     >
-      <p className="text-text-muted text-sm font-mono mb-2 uppercase tracking-widest">
-        Step 2 of 6
-      </p>
+      <div className="flex items-center justify-between mb-2">
+        <Link href="/" className="text-text-muted text-sm font-mono no-underline hover:text-text-primary transition-colors">
+          ← Start over
+        </Link>
+        <p className="text-text-muted text-sm font-mono uppercase tracking-widest">
+          Step 2 of 6
+        </p>
+      </div>
       <h2 className="font-display text-3xl font-bold text-text-primary mb-2">
         What&apos;s your north star metric?
       </h2>

@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { nanoid } from "nanoid";
@@ -86,9 +87,14 @@ export function UnlockQuestion({
       exit={{ opacity: 0, y: -16 }}
       transition={{ duration: 0.25 }}
     >
-      <p className="text-text-muted text-sm font-mono mb-2 uppercase tracking-widest">
-        Step {stepNum} of 6 · Indicator {stepNum - 2} of 4
-      </p>
+      <div className="flex items-center justify-between mb-2">
+        <Link href="/" className="text-text-muted text-sm font-mono no-underline hover:text-text-primary transition-colors">
+          ← Start over
+        </Link>
+        <p className="text-text-muted text-sm font-mono uppercase tracking-widest">
+          Step {stepNum} of 6 · Indicator {stepNum - 2} of 4
+        </p>
+      </div>
       <div className="w-full h-[3px] bg-surface rounded-full mb-5 overflow-hidden">
         <div
           className="h-full bg-brand-purple rounded-full transition-all duration-500 ease-out"
